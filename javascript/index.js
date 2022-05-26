@@ -115,7 +115,7 @@ window.addEventListener("load", () => {
           <div class="short-link-and-button">
             <h4 class="shorten-link">${card.shortLink}</h4>
             <div class="button-container">
-            <input type="text" value=${card.shortLink} class="input" hidden="true">
+            <input type="hidden" value=${card.shortLink} class="input" >
               <button class="ctc-btn large-btn" onclick="copyLink(event)">Copy</button>
             </div>
           </div>
