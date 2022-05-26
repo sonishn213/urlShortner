@@ -1,8 +1,6 @@
 function copyLink(event) {
   const input = event.target.parentNode.querySelector(".input");
   console.log(input);
-  input.select();
-  input.setSelectionRange(0, 99999);
 
   navigator.clipboard
     .writeText(input.value)
@@ -117,7 +115,7 @@ window.addEventListener("load", () => {
           <div class="short-link-and-button">
             <h4 class="shorten-link">${card.shortLink}</h4>
             <div class="button-container">
-            <input type="text" value=${card.shortLink} class="input">
+            <input type="text" value=${card.shortLink} class="input" hidden="true">
               <button class="ctc-btn large-btn" onclick="copyLink(event)">Copy</button>
             </div>
           </div>
