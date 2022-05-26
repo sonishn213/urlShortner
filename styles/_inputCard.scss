@@ -1,0 +1,56 @@
+@use "variable" as var;
+#input-card-section {
+  background-color: var.$lightGray;
+  padding: 0 24px;
+  .input-and-display {
+    position: relative;
+    top: -75px;
+  }
+  .input-card {
+    background-image: url("../images/bg-shorten-mobile.svg");
+    background-color: var.$DarkViolet;
+    background-repeat: no-repeat;
+    background-position: top right;
+    padding: 24px;
+    border-radius: 10px;
+
+    .input-box {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-weight: 500;
+      font-size: 16px;
+      outline: none;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    .ctc-btn {
+      font-size: 16px;
+    }
+    @media only screen and (min-width: 375px) {
+      display: flex;
+      align-items: stretch;
+      padding: 50px 62px;
+      background-image: url("../images/bg-shorten-desktop.svg");
+
+      .input-box {
+        font-size: 18px;
+        display: block;
+        padding: 18px;
+        margin-bottom: 0;
+        margin-right: 24px;
+        border-radius: 8px;
+      }
+      .ctc-btn {
+        font-size: 18px;
+        max-width: 100%;
+        width: auto;
+        display: block;
+        white-space: nowrap;
+        padding: 12px 40px;
+        // align-self: stretch;
+      }
+    }
+  }
+}

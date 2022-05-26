@@ -1,0 +1,103 @@
+@use "variable" as var;
+
+.header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 24px 22px 24px;
+  &-logo {
+    min-width: 120px;
+    height: auto;
+
+    img {
+      max-width: 100%;
+      min-width: 100%;
+      height: auto;
+    }
+  }
+  &-menu-toggle {
+    color: var.$GrayishViolet;
+    font-size: 24px;
+    @media only screen and (min-width: 375px) {
+      display: none;
+    }
+  }
+  @media only screen and (min-width: 375px) {
+    max-width: 1110px;
+    margin: 0 auto;
+    padding: 48px 0;
+  }
+  .desk-menu {
+    display: none;
+    width: 100%;
+    // display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    margin-left: 30px;
+    a {
+      color: var.$GrayishViolet;
+      font-weight: 700;
+    }
+    a:hover {
+      color: var.$VeryDarkBlue;
+    }
+    .desk-menu-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .login-link {
+        margin-right: 36px;
+      }
+    }
+    .desk-menu-left {
+      .menu-link {
+        padding: 0 15px;
+      }
+    }
+    .ctc-btn {
+      font-size: 16px;
+      padding: 8px 25px;
+    }
+    @media only screen and (min-width: 375px) {
+      display: flex;
+    }
+  }
+}
+.mobile-menu {
+  position: relative;
+  display: none;
+  //   display: block;
+  padding: 0 24px;
+}
+.mobile-menu > div {
+  position: relative;
+}
+.mobile-menu-links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 25px;
+  background-color: var.$DarkViolet;
+  border-radius: 10px;
+  & .menu-link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  & .saperator {
+    background-color: var.$Gray;
+    margin-bottom: 30px;
+  }
+
+  & .menu-link:nth-child(5) {
+    margin-bottom: 25px;
+  }
+}

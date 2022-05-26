@@ -1,0 +1,18 @@
+@use "variable" as var;
+
+.call-to-action {
+  padding: 88px 24px;
+  background-color: var.$DarkViolet;
+  background-image: url("../images/bg-boost-mobile.svg");
+  text-align: center;
+  .ctc-title {
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+  }
+  @media only screen and (min-width: 375px) {
+    background-image: url("../images/bg-boost-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 56px 24px;
+  }
+}

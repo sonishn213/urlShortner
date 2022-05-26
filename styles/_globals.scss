@@ -1,0 +1,108 @@
+@use "variable" as var;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var.$font;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+body {
+  width: 100%;
+  // padding: 0 24px;
+
+  text-align: center;
+  font-size: 18px;
+  @media only screen and (min-width: 375px) {
+    text-align: left;
+  }
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 26px;
+}
+h3 {
+  font-size: 20px;
+}
+h1,
+h2,
+h3 {
+  color: var.$VeryDarkBlue;
+}
+p {
+  color: var.$GrayishViolet;
+  line-height: 1.7;
+}
+.saperator {
+  background-color: white;
+  border: none;
+  height: 0.5px;
+}
+.ctc-btn {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  background-color: var.$Cyan;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.ctc-btn:hover {
+  background-color: hsl(180, 66%, 70%);
+}
+.ctc-btn.large-btn {
+  width: 100%;
+  padding: 12px 25px;
+}
+
+.ctc-btn.small-btn {
+  padding: 14px 46px;
+}
+.ctc-btn.btn-round {
+  border-radius: 50px;
+}
+.blue-saparator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .blue-saparator {
+    width: 8px;
+    background: var.$Cyan;
+    height: 90px;
+    @media only screen and (min-width: 375px) {
+      width: 35px;
+      height: 8px;
+    }
+  }
+}
+.container {
+  max-width: 1110px;
+  margin: auto;
+}
+.no-input {
+  border: 4px solid var.$Red !important;
+}
+.no-input::placeholder {
+  color: var.$Red;
+  opacity: 0.5;
+}
+@media only screen and (min-width: 375px) {
+  h1 {
+    font-size: 75px;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+}

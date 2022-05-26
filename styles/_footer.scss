@@ -1,0 +1,67 @@
+@use "variable" as var;
+footer {
+  background-color: var.$VeryDarkViolet;
+}
+.footer {
+  padding: 54px 24px;
+}
+.footer-link-list {
+  margin-top: 54px;
+  h4 {
+    color: white;
+    margin-bottom: 26px;
+  }
+  a {
+    display: block;
+    color: var.$GrayishViolet;
+  }
+  a:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.social-links {
+  margin-top: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .social-link-container:not(:last-child) {
+    margin-right: 24px;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  .footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 70px 0px;
+  }
+  .logo-footer {
+    width: 25%;
+    // flex: 1;
+    // align-self: flex-start;
+  }
+  .footer-link-list {
+  }
+  .footer-link-list {
+    margin-top: 0;
+
+    h4 {
+      color: white;
+      margin-bottom: 22px;
+      font-size: 16px;
+    }
+    a {
+      display: block;
+      color: var.$GrayishViolet;
+      font-size: 16px;
+    }
+    a:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  .social-links {
+    margin-top: 0;
+  }
+}

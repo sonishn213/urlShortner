@@ -1,0 +1,81 @@
+@use "variable" as var;
+.shotlink-display {
+  //   padding: 0 24px;
+  background-color: var.$lightGray;
+  padding-bottom: 38px;
+}
+.short-link-card {
+  margin-top: 24px;
+  text-align: left;
+  padding: 0px;
+  background-color: white;
+  border-radius: 8px;
+  .button-container {
+    padding: 0 16px 16px 16px;
+  }
+  .ctc-btn {
+    padding: 10px 25px;
+    min-width: 0;
+  }
+}
+// .actual-link-container {
+//   max-width: 60%;
+// }
+.actual-link-container {
+  max-width: 80%;
+}
+.actual-link {
+  padding: 16px;
+  color: var.$VeryDarkBlue;
+
+  font-size: 16px;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.shorten-link {
+  border-top: 1px solid var.$Gray;
+  padding: 16px;
+  color: var.$Cyan;
+  font-size: 16px;
+}
+@media only screen and (min-width: 375px) {
+  .short-link-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+
+    .button-container {
+      padding: 0;
+    }
+    .ctc-btn {
+      padding: 10px 25px;
+      min-width: 102px;
+      font-size: 16px;
+    }
+  }
+  .short-link-and-button {
+    display: flex;
+    align-items: center;
+  }
+  .actual-link-container {
+    max-width: 60%;
+  }
+  .actual-link {
+    padding: 0px;
+    font-weight: 500;
+    border-bottom: none;
+    font-size: 20px;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .shorten-link {
+    display: block;
+    font-weight: 500;
+    padding: 0px;
+    padding-right: 24px;
+    font-size: 20px;
+  }
+}
