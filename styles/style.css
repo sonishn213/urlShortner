@@ -65,8 +65,16 @@ p {
   cursor: pointer;
 }
 
+.ctc-btn.darkblue {
+  background-color: hsl(257deg, 27%, 26%);
+}
+
 .ctc-btn:hover {
   background-color: hsl(180deg, 66%, 70%);
+}
+
+.darkblue:hover {
+  background-color: hsl(257deg, 27%, 26%);
 }
 
 .ctc-btn.large-btn {
@@ -331,7 +339,24 @@ p {
   font-weight: 500;
   font-size: 16px;
   outline: none;
-  margin-bottom: 16px;
+}
+#input-card-section .input-card .input-container {
+  position: relative;
+  margin-bottom: 14px;
+}
+#input-card-section .input-card .errorMsg {
+  font-style: italic;
+  color: hsl(0deg, 87%, 67%);
+  font-size: 12px;
+  margin-top: 4px;
+  text-align: left;
+  display: none;
+}
+#input-card-section .input-card .errorMsg.show {
+  display: block;
+}
+#input-card-section .input-card .input-container {
+  width: 100%;
   flex-grow: 1;
 }
 #input-card-section .input-card .ctc-btn {
@@ -349,7 +374,6 @@ p {
     display: block;
     padding: 18px;
     margin-bottom: 0;
-    margin-right: 24px;
     border-radius: 8px;
   }
   #input-card-section .input-card .ctc-btn {
@@ -359,6 +383,18 @@ p {
     display: block;
     white-space: nowrap;
     padding: 12px 40px;
+  }
+  #input-card-section .input-card .input-container {
+    position: relative;
+    margin-right: 24px;
+    margin-bottom: 0;
+  }
+  #input-card-section .input-card .errorMsg {
+    position: absolute;
+    font-style: italic;
+    color: hsl(0deg, 87%, 67%);
+    font-size: 14px;
+    margin-top: 5px;
   }
 }
 

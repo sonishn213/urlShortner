@@ -22,7 +22,24 @@
       font-weight: 500;
       font-size: 16px;
       outline: none;
-      margin-bottom: 16px;
+    }
+    .input-container {
+      position: relative;
+      margin-bottom: 14px;
+    }
+    .errorMsg {
+      font-style: italic;
+      color: var.$Red;
+      font-size: 12px;
+      margin-top: 4px;
+      text-align: left;
+      display: none;
+    }
+    .errorMsg.show {
+      display: block;
+    }
+    .input-container {
+      width: 100%;
       flex-grow: 1;
     }
     .ctc-btn {
@@ -39,7 +56,7 @@
         display: block;
         padding: 18px;
         margin-bottom: 0;
-        margin-right: 24px;
+
         border-radius: 8px;
       }
       .ctc-btn {
@@ -50,6 +67,18 @@
         white-space: nowrap;
         padding: 12px 40px;
         // align-self: stretch;
+      }
+      .input-container {
+        position: relative;
+        margin-right: 24px;
+        margin-bottom: 0;
+      }
+      .errorMsg {
+        position: absolute;
+        font-style: italic;
+        color: var.$Red;
+        font-size: 14px;
+        margin-top: 5px;
       }
     }
   }

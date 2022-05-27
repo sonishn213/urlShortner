@@ -1,15 +1,28 @@
+//code to copy link on button click
 function copyLink(event) {
   const input = event.target.parentNode.querySelector(".input");
+
   console.log(input);
 
   navigator.clipboard
     .writeText(input.value)
     .then(() => {
-      alert("successfully copied");
+      changeBtncolor(event.target);
     })
     .catch(() => {
       alert("something went wrong");
     });
+}
+//code to change color and text of copy btn
+function changeBtncolor(btn) {
+  const btns = document.querySelectorAll(".copybtn");
+  console.log(btn);
+  btns.forEach((item) => {
+    item.classList.remove("darkblue");
+    item.textContent = "Copy";
+  });
+  btn.classList.add("darkblue");
+  btn.textContent = "Copied!";
 }
 window.addEventListener("load", () => {
   // setInterval(addlinklist, 1000);
@@ -56,16 +69,19 @@ window.addEventListener("load", () => {
 
     //call the fetch api to generate short link
     getShortLink(longlink).then((data) => {
-      shortLink = data.result.short_link;
+      if (data.ok) {
+        shortLink = data.result.short_link;
 
-      //check if storage is created to push new links
-      if (!localStorage.getItem("linksrecord")) {
-        populateStorage(longlink, shortLink);
+        //check if storage is created to push new links
+        if (!localStorage.getItem("linksrecord")) {
+          populateStorage(longlink, shortLink);
+        } else {
+          insertData(longlink, shortLink);
+        }
+        dataObj = JSON.parse(localStorage.getItem("linksrecord"));
       } else {
-        insertData(longlink, shortLink);
+        alert("Invalid Url");
       }
-      dataObj = JSON.parse(localStorage.getItem("linksrecord"));
-      // console.log(dataObj);
     });
   });
   //create storage for first time
@@ -89,16 +105,21 @@ window.addEventListener("load", () => {
   };
   //function to add or remove error on empty input
   const toggleErrorStyle = (type) => {
+    const errorDisplay = document.querySelector(".errorMsg");
+
     if (type === "add") {
       inputEle.classList.add("no-input");
+      errorDisplay.classList.add("show");
     } else {
       inputEle.classList.remove("no-input");
+      errorDisplay.classList.remove("show");
     }
   };
   //function to return shprt link fetched from api.shrtco.de
   async function getShortLink(longlink) {
     let res = await fetch(`https://api.shrtco.de/v2/shorten?url=${longlink}`);
     let data = await res.json();
+    console.log(data);
     return await data;
   }
 
@@ -116,13 +137,12 @@ window.addEventListener("load", () => {
             <h4 class="shorten-link">${card.shortLink}</h4>
             <div class="button-container">
             <input type="hidden" value=${card.shortLink} class="input" >
-              <button class="ctc-btn large-btn" onclick="copyLink(event)">Copy</button>
+              <button class="ctc-btn large-btn copybtn" onclick="copyLink(event)">Copy</button>
             </div>
           </div>
         </div>`;
         })
         .join("");
-      console.log(cards);
       cardlist.innerHTML = cards;
     }
   }

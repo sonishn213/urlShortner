@@ -55,9 +55,16 @@ p {
   border-radius: 5px;
   cursor: pointer;
 }
+.ctc-btn.darkblue {
+  background-color: var.$DarkViolet;
+}
 .ctc-btn:hover {
   background-color: hsl(180, 66%, 70%);
 }
+.darkblue:hover {
+  background-color: var.$DarkViolet;
+}
+
 .ctc-btn.large-btn {
   width: 100%;
   padding: 12px 25px;
@@ -94,6 +101,7 @@ p {
   color: var.$Red;
   opacity: 0.5;
 }
+
 @media only screen and (min-width: 375px) {
   h1 {
     font-size: 75px;
